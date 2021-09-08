@@ -1,0 +1,44 @@
+class UnionFind{
+
+private: 
+  vector<int> parents;
+  vector<int> rank; 
+  vector<int> size; 
+  int groups; 
+
+public:
+  UnionFind(int n) : parents(n), rank(n), size(n, 1){
+    for(int i = 0; i<n; i++)
+      parents[i] = i; 
+    groups = n; 
+  }
+
+  int find(int i){
+    if(parents[i] == i)
+      return i; 
+    return parents[i] = find(parents[i]); 
+  }
+
+  void unionCells(int i, int j){
+    i = find(i);
+    j = find(j); 
+    if(i == j)
+      return;
+    
+    groups--; 
+    if(rank[i] == rank[j])
+      rank[i]++;
+    if(rank[i] > rank[j]){
+      parents[j] = i;
+      size[i] += size[j]; 
+    }
+    else{
+      parents[i] = j; 
+      size[j] += size[i]; 
+    }
+  }
+
+  bool isConnected(int i, int j){
+    return find(i) == find(j); 
+  }
+};
