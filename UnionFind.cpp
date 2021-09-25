@@ -1,15 +1,15 @@
-class UnionFind{
+public class UnionFind{
+  int[] parents, rank, size; 
+  int n, groups; 
 
-private: 
-  vector<int> parents;
-  vector<int> rank; 
-  vector<int> size; 
-  int groups; 
-
-public:
-  UnionFind(int n) : parents(n), rank(n), size(n, 1){
+  public UnionFind(int n){
+    this.n = n; 
+    parents = new int[n];
+    rank = new int[n]; 
     for(int i = 0; i<n; i++)
       parents[i] = i; 
+    size = new int[n]; 
+    Arrays.fill(size, 1); 
     groups = n; 
   }
 
@@ -19,7 +19,7 @@ public:
     return parents[i] = find(parents[i]); 
   }
 
-  void unionCells(int i, int j){
+  void union(int i, int j){
     i = find(i);
     j = find(j); 
     if(i == j)
@@ -38,7 +38,7 @@ public:
     }
   }
 
-  bool isConnected(int i, int j){
+  boolean isConnected(int i, int j){
     return find(i) == find(j); 
   }
-};
+}
