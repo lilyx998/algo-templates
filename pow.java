@@ -1,4 +1,4 @@
-private long pow(long n, int k){
+private long pow(long n, int k, long MOD){
   long res = 1; 
   while(k != 0){
     if(k % 2 == 1)

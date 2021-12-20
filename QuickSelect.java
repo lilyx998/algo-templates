@@ -1,5 +1,3 @@
-// median: target = arr.length/2
-
 // returns (0-indexed) [target]'th smallest number in arr 
 private int quickSelect(int[] arr, int target){
   int l = 0, r = arr.length-1, pivot = -1; 

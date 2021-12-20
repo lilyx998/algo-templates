@@ -1,15 +1,18 @@
-public class UnionFind{
-  int[] parents, rank, size; 
-  int n, groups; 
+#include <bits/stdc++.h>
+using namespace std; 
 
-  public UnionFind(int n){
-    this.n = n; 
-    parents = new int[n];
-    rank = new int[n]; 
+class UnionFind{
+
+private: 
+  vector<int> parents;
+  vector<int> rank; 
+  vector<int> size; 
+  int groups; 
+
+public:
+  UnionFind(int n) : parents(n), rank(n), size(n, 1){
     for(int i = 0; i<n; i++)
       parents[i] = i; 
-    size = new int[n]; 
-    Arrays.fill(size, 1); 
     groups = n; 
   }
 
@@ -19,7 +22,7 @@ public class UnionFind{
     return parents[i] = find(parents[i]); 
   }
 
-  void union(int i, int j){
+  void unionCells(int i, int j){
     i = find(i);
     j = find(j); 
     if(i == j)
@@ -38,7 +41,11 @@ public class UnionFind{
     }
   }
 
-  boolean isConnected(int i, int j){
+  bool isConnected(int i, int j){
     return find(i) == find(j); 
   }
-}
+
+  int numGroups(){
+    return groups; 
+  }
+};
