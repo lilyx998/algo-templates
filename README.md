@@ -12,7 +12,8 @@ Templates for algorithms and data structures
 - **GetPrimeFactors** - Finds the prime factorization of a number 
 - **PrimeSieve** - Computes number of primes less than or equal to a number using the Sieve of Eratosthenes
 - **QuickSelect** - Returns the kth smallest number in an unsorted array in `O(n)` time on average 
-- **Tarjan's** - Finds the strongly connected components of a graph (an edge that will disconnect parts of the graph when rememoved) in `O(|v| + |e|)` time
+- **Tarjan's** - Finds the critical edges of a graph (an edge that will disconnect parts of the graph when rememoved) in `O(|v| + |e|)` time
+- **Topological Sort** - Finds an linear ordering of a graph, such that for every edge u->v, u comes before v in the graph. 
 - **UnionFind** - Data structure used to determine the connected components in a graph
 - **gcd** - Finds the greatest common divisor of 2 numbers using Euclidean's algorithm
 - **pow** - Raises a number n to the kth power (using mods for larger numbers)
