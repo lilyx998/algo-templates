@@ -1,15 +1,14 @@
-/*
-REQUIRES:
-cities are 0-indexed 
-start =/= end
+// REQUIRES:
+// cities are 0-indexed 
+// start != end
+// graph[i][j] = {neighboring city to i, cost from i to city}
+// start = starting city 
+// end = target city
+// n = total number of cities
 
-graph[i] = neighboring cities to i and the cost to get from i to said city
-start = starting city 
-end = target city
-n = total number of cities
 
-returns the minimum cost to reach end city from start city
-*/
+// EFFECTS:
+// returns the minimum cost to reach end city from start city
 
 int findMinCostToReachCity(List<int[]>[] graph, int start, int end, int n){
   boolean[] vis = new boolean[n]; 
