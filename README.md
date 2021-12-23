@@ -14,6 +14,7 @@ Templates for algorithms and data structures
 - **QuickSelect** - Returns the kth smallest number in an unsorted array in `O(n)` time on average 
 - **Tarjan's** - Finds the critical edges of a graph (an edge that will disconnect parts of the graph when rememoved) in `O(|v| + |e|)` time
 - **Topological Sort** - Finds an linear ordering of a graph, such that for every edge u->v, u comes before v in the graph. 
+- **Trie** - Data structure that stores prefixes of strings in a tree structure
 - **UnionFind** - Data structure used to determine the connected components in a graph
 - **gcd** - Finds the greatest common divisor of 2 numbers using Euclidean's algorithm
 - **pow** - Raises a number n to the kth power (using mods for larger numbers)
