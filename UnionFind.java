@@ -19,11 +19,11 @@ public class UnionFind{
     return parents[i] = find(parents[i]); 
   }
 
-  void union(int i, int j){
+  bool union(int i, int j){
     i = find(i);
     j = find(j); 
     if(i == j)
-      return;
+      return false;
     
     groups--; 
     if(rank[i] == rank[j])
@@ -36,6 +36,7 @@ public class UnionFind{
       parents[i] = j; 
       size[j] += size[i]; 
     }
+    return true; 
   }
 
   boolean isConnected(int i, int j){

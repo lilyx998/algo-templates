@@ -22,11 +22,11 @@ public:
     return parents[i] = find(parents[i]); 
   }
 
-  void unionCells(int i, int j){
+  bool union_sets(int i, int j){
     i = find(i);
     j = find(j); 
     if(i == j)
-      return;
+      return false;
     
     groups--; 
     if(rank[i] == rank[j])
@@ -39,6 +39,7 @@ public:
       parents[i] = j; 
       size[j] += size[i]; 
     }
+    return true; 
   }
 
   bool isConnected(int i, int j){
