@@ -17,6 +17,7 @@ class BIT{
   }
 
   // returns sum of nums from [0, idx]
+  // for range query of [l,r], do query(r)-query(l-1)
   int query(int idx){
     int res = 0; 
     for(int i = idx + 1; i>0; i -= (i&-i))
